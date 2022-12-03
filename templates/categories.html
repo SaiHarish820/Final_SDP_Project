@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+{% load static %}
+{% static "images" as baseUrl %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>categories
+
+        </title>
+
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+                  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Bro bid </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="\">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="\createbid">Create bid</a></li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">view or participate in any bids</h1>
+                       
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+       
+        <!-- Projects-->
+     
+                <!-- Project One Row-->
+                <section style="background-color: #eee;">
+                    <div class="container py-5">
+
+                      <!-- First Product -->
+
+
+                        {% for product in prod %}
+
+                      <div class="row justify-content-center mb-3">
+                        <div class="col-md-12 col-xl-10">
+                          <div class="card shadow-0 border rounded-3">
+                            <div class="card-body">
+                              <div class="row">
+
+                                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    <img src={{product.img.url}}
+                                      class="w-100" />
+
+                                    <a href="#!">
+                                      <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                  <h5>{{product.product_name}}</h5>
+
+
+                                  <div class="mt-1 mb-0 text-muted small">
+                                    <span>{{product.product_desc}}</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Light weight</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Best finish<br /></span>
+                                  </div>
+                                  <div class="mb-2 text-muted small">
+                                    <span>Unique design</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>For men</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Casual<br /></span>
+                                  </div>
+
+
+                                </div>
+
+                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                  <div class="d-flex flex-column mt-4">
+                                     {% if user.is_authenticated %}
+                                      <a href="/participate">
+                                    <button class="btn btn-primary btn-sm" type="button">Participate</button>
+                                          </a>
+                                      {% else %}
+                                       <a href="accounts/register">
+                                    <button class="btn btn-primary btn-sm" type="button">Participate</button>
+                                           {% endif %}
+                                    <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                      Details
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        {% endfor %}
+
+                        <!--Second Product -->
+
+                      <div class="row justify-content-center mb-3">
+                        <div class="col-md-12 col-xl-10">
+                          <div class="card shadow-0 border rounded-3">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"
+                                      class="w-100" />
+                                    <a href="#!">
+                                      <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                  <h5>Quant olap shirts</h5>
+                                  
+                                  <div class="mt-1 mb-0 text-muted small">
+                                    <span>100% cotton</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Light weight</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Best finish<br /></span>
+                                  </div>
+                                  <div class="mb-2 text-muted small">
+                                    <span>Unique design</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>For men</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Casual<br /></span>
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                  
+                                  
+                                  <div class="d-flex flex-column mt-4">
+                                       {% if user.is_authenticated %}
+                                      <a href="/participate">
+                                    <button class="btn btn-primary btn-sm" type="button">Participate</button>
+                                          </a>
+                                      {% else %}
+                                       <a href="accounts/register">
+                                    <button class="btn btn-primary btn-sm" type="button">Participate</button>
+                                           {% endif %}
+
+                                    <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                      Details
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!--Third Product-->
+
+
+                      <div class="row justify-content-center">
+                        <div class="col-md-12 col-xl-10">
+                          <div class="card shadow-0 border rounded-3">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(5).webp"
+                                      class="w-100" />
+                                    <a href="#!">
+                                      <div class="hover-overlay">
+                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                  <h5>Quant ruybi shirts</h5>
+                                  
+                                  <div class="mt-1 mb-0 text-muted small">
+                                    <span>100% cotton</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Light weight</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Best finish<br /></span>
+                                  </div>
+                                  <div class="mb-2 text-muted small">
+                                    <span>Unique design</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>For women</span>
+                                    <span class="text-primary"> • </span>
+                                    <span>Casual<br /></span>
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                 
+                                  <div class="d-flex flex-column mt-4">
+                                    <button class="btn btn-primary btn-sm" type="button">Details</button>
+                                    <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                                      Participate
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                    </div>
+                  </section>
+                <!-- Project Two Row-->
+          
+        <!-- Signup-->
+        
+      
+      
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

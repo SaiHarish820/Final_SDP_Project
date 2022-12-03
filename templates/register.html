@@ -1,0 +1,45 @@
+<center>
+    <div class="regitems">
+    <div><h1 style="font-family:fantasy">Register Here</h1></div>
+    <form  action="register" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+        <label class="form-label mt-4">Enter First Name:</label>
+            <input type="text" placeholder="firstname" name="first_name" class="form-control" style="width:500px">
+              <br>
+            <label class="form-label mt-4">Enter Last Name:</label>
+        <input type="text" placeholder="lastname" name="last_name" class="form-control" style="width:500px">
+              <br>
+            <label class="form-label mt-4">Enter User Name:</label>
+        <input type="text" placeholder="username" name="username" class="form-control" style="width:500px">
+              <br>
+       <label class="form-label mt-4">Enter Email: </label>
+            <input type="email" placeholder="Email" name="email" class="form-control" style="width:500px">
+              <br>
+             <label class="form-label mt-4">Enter Password: </label>
+            <input type="password" placeholder="password" name="password1"class="form-control" style="width:500px">
+              <br>
+             <label class="form-label mt-4">Re-Enter Password: </label>
+            <input type="password" placeholder="repeat password" name="password2" class="form-control" style="width:500px">
+            <br>
+        </div>
+                <input type="submit" class="btn btn-primary" style="background-color:grey;border-color:grey">
+         <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="links">
+				<a href="#">Forgot Password ?</a>
+				<a href="login">Login</a>
+			</div>
+    </form>
+        <div>
+    {% for message in messages%}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+
+ </center>
